@@ -8,7 +8,7 @@
     </thead>
     <tbody class="divide-y divide-gray-200 bg-white">
       <tr v-for="item in rows" :key="item.name">
-        <td class="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0" v-for="column in columns" :key="column.key">
+        <td class="whitespace-nowrap py-5 pl-10 pr-20 text-sm sm:pl-0" v-for="column in columns" :key="column.key">
           <div class="flex items-center">
 
             <div class="ml-4">
