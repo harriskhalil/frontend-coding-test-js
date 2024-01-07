@@ -1,10 +1,10 @@
 <template>
   <table>
     <thead>
-    <tr>
-      <th scope="col" class="py-3.5 pl-4 pr-3 text-center text-sm font-semibold text-gray-900 sm:pl-0" v-for="column in columns" :key="column.key">{{ column.label }}</th>
-      <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0"  v-if="actions.length">Actions</th>
-    </tr>
+      <tr>
+        <th scope="col" class="py-3.5 pl-4 pr-3 text-center text-sm font-semibold text-gray-900 sm:pl-0" v-for="column in columns" :key="column.key">{{ column.label }}</th>
+        <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0"  v-if="actions.length">Actions</th>
+      </tr>
     </thead>
     <tbody class="divide-y divide-gray-200 bg-white">
       <tr v-for="item in rows" :key="item.name">
