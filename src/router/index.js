@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LayoutMain from '../components/layout/LayoutMain.vue'
 import Error from '../views/Error.vue'
 import Home from '../views/Home.vue'
+import Pokemon from '../views/Pokemon.vue'
 
 const mainRoutes = [
   {
@@ -9,6 +10,12 @@ const mainRoutes = [
     name: 'Home',
     props: true,
     component: Home,
+  },
+  {
+    path: '/pokemon',
+    name: 'Pokemon',
+    props: true,
+    component: Pokemon,
   },
 ]
 
