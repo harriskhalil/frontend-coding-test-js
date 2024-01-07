@@ -1,5 +1,5 @@
 <template>
-  <li class="col-span-1 flex rounded-md shadow-sm">
+  <li class="col-span-1 flex rounded-md shadow-sm ">
     <div :class="color" class=" flex w-16 flex-shrink-0 items-center justify-center rounded-l-md text-sm font-medium text-white">
       {{ initials }}</div>
     <div class="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white">
