@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <DataTable :columns="columns" :rows="pokemonList" :actions="actions" @view="viewPokemon"/>
+    <DataTable v-if="pokemonList.length>0" :columns="columns" :rows="pokemonList" :actions="actions" @view="viewPokemon"/>
     <div class="pagination">
       <button @click="fetchPokemonList(previous)" v-if="previous">Previous</button>
       <button @click="fetchPokemonList(next)"  v-if="next">Next</button>
@@ -34,7 +34,7 @@ export default {
     DataTable
   },
   created() {
-    if (this.pokemonList.length==0){
+    if (this.pokemonList.length===0){
       this.fetchPokemonList('https://pokeapi.co/api/v2/pokemon/');
     }
   },
@@ -42,7 +42,7 @@ export default {
     async fetchPokemonList(url) {
       try {
         const response = await axios.get(url);
-        if(response.status==200){
+        if(response.status===200){
           this.next= response.data.next
           this.previous = response.data.previous
           this.$toast.success('Pokemon retrieved successfully');
