@@ -3,9 +3,10 @@
 
     <DataTable v-if="pokemonList.length>0" :columns="columns" :rows="pokemonList" :actions="actions" @view="viewPokemon"/>
     <div class="pagination">
-      <button @click="fetchPokemonList(previous)" v-if="previous">Previous</button>
-      <button @click="fetchPokemonList(next)"  v-if="next">Next</button>
+      <button class="inline-flex items-center gap-x-2 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="fetchPokemonList(previous)" v-if="previous">Previous</button>
+      <button class="inline-flex items-center gap-x-2 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="fetchPokemonList(next)"  v-if="next">Next</button>
     </div>
+
   </div>
 </template>
 
@@ -16,6 +17,10 @@ export default {
   data() {
     return {
       pokemonList: [],
+      people:[
+        { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
+        // More people...
+      ],
       next:null,
       previous:null,
       columns:[
@@ -55,21 +60,15 @@ export default {
       }
     },
     viewPokemon(pokemon){
-      console.log(pokemon);
-    }
+      this.$router.push({ name: 'PokemonDetails', params: {id:pokemon.name}})
+    },
   },
 
 }
 
 </script>
 <style scoped>
-.pagination button {
-  margin: 0 5px;
-  padding: 8px 12px;
-  cursor: pointer;
-  background-color: brown;
-  border-radius: 5px;
-}
+
 .pagination {
   display: flex;
   justify-content: space-between;
