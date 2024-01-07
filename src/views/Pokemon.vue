@@ -1,12 +1,10 @@
 <template>
   <div>
-
     <DataTable v-if="pokemonList.length>0" :columns="columns" :rows="pokemonList" :actions="actions" @view="viewPokemon"/>
     <div class="pagination">
       <button class="inline-flex items-center gap-x-2 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="fetchPokemonList(previous)" v-if="previous">Previous</button>
       <button class="inline-flex items-center gap-x-2 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="fetchPokemonList(next)"  v-if="next">Next</button>
     </div>
-
   </div>
 </template>
 
@@ -17,10 +15,6 @@ export default {
   data() {
     return {
       pokemonList: [],
-      people:[
-        { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-        // More people...
-      ],
       next:null,
       previous:null,
       columns:[
