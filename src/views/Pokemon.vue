@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div  class="text-3xl mt-3">Pokemon List</div>
     <DataTable v-if="pokemonList.length>0" :columns="columns" :rows="pokemonList" :actions="actions" @view="viewPokemon"/>
     <div class="pagination">
       <button class="inline-flex items-center gap-x-2 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="fetchPokemonList(previous)" v-if="previous">Previous</button>
@@ -30,7 +31,7 @@ export default {
     };
   },
   components:{
-    DataTable
+    DataTable: DataTable
   },
   created() {
     if (this.pokemonList.length===0){

@@ -1,5 +1,5 @@
 <template>
-  <table>
+  <table class="datatable">
     <thead>
       <tr>
         <th scope="col" class="py-3.5 pl-4 pr-3 text-center text-sm font-semibold text-gray-900 sm:pl-0" v-for="column in columns" :key="column.key">{{ column.label }}</th>
@@ -17,7 +17,7 @@
           </div>
         </td>
         <td class="whitespace-nowrap px-3 py-5 text-sm text-gray-500" v-if="actions.length">
-          <button class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20" v-for="action in actions" :key="action.label" @click="performAction(action, item)">
+          <button class="button inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20" v-for="action in actions" :key="action.label" @click="performAction(action, item)">
             {{ action.label }}
           </button>
         </td>
